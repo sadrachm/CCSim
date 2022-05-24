@@ -34,14 +34,6 @@ AFRAME.registerComponent('start', {
     init: function() {
         var el = this.el;
         el.addEventListener('click', function() {
-            // var el = document.querySelector('#start')
-            // var el1 = document.querySelector('#exit')
-            // var el2 = document.querySelector('#load')
-            // var el3 = document.querySelector('#title')
-            // el.parentNode.removeChild(el)
-            // el2.parentNode.removeChild(el1)
-            // el2.parentNode.removeChild(el2)
-            // el3.parentNode.removeChild(el3)
             document.querySelector('#scene1').setAttribute('visible', 'false')
             document.querySelector('#scene2').setAttribute('visible', 'true')
         })
@@ -70,6 +62,17 @@ AFRAME.registerComponent('scene1continue', {
             console.log("NANI")
             document.querySelector('#scene2').setAttribute('visible', 'false')
             document.querySelector('#scene3').setAttribute('visible', 'true')
+        })
+    }
+});
+AFRAME.registerComponent('scene2continue', {
+    init: function() {
+        var el = this.el;
+        el.addEventListener('click', function() {
+            console.log("NANI")
+            document.querySelector('#scene3').setAttribute('visible', 'false')
+            document.querySelector('#scene4').setAttribute('visible', 'true')
+            document.querySelector('#env').setAttribute('environment', 'preset:forest')
         })
     }
 });
