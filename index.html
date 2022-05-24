@@ -6,7 +6,58 @@
     <meta name="description" content="Hello, World! - A-Frame">
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
-    <script src="/app.js"></script>
+    <script>
+      
+function maybe() {
+    console.log('nani')
+}
+AFRAME.registerComponent('start', {
+    init: function() {
+        var el = this.el;
+        el.addEventListener('click', function() {
+            document.querySelector('#scene1').setAttribute('visible', 'false')
+            document.querySelector('#scene2').setAttribute('visible', 'true')
+        })
+    }
+});
+AFRAME.registerComponent('load', {
+    init: function() {
+        var el = this.el;
+        el.addEventListener('click', function() {
+            console.log('Really Loading Save')
+        })
+    }
+});
+AFRAME.registerComponent('exit', {
+    init: function() {
+        var el = this.el;
+        el.addEventListener('click', function() {
+            console.log("Esadxit")
+        })
+    }
+});
+AFRAME.registerComponent('scene1continue', {
+    init: function() {
+        var el = this.el;
+        el.addEventListener('click', function() {
+            console.log("NANI")
+            document.querySelector('#scene2').setAttribute('visible', 'false')
+            document.querySelector('#scene3').setAttribute('visible', 'true')
+        })
+    }
+});
+AFRAME.registerComponent('scene2continue', {
+    init: function() {
+        var el = this.el;
+        el.addEventListener('click', function() {
+            console.log("NANI")
+            document.querySelector('#scene3').setAttribute('visible', 'false')
+            document.querySelector('#scene4').setAttribute('visible', 'true')
+            document.querySelector('#env').setAttribute('environment', 'preset:forest')
+        })
+    }
+});
+    </script>
   </head>
   <body>
     <a-scene>    
@@ -59,7 +110,7 @@
 
       <a-entity id="scene3" visible="false">
         <a-box position="0 1.4 -2" width="2" height="1.3" depth=".2"  color="brown">
-          <a-image position=".5 .3 .11" height=".5" width=".7" src="img.png"></a-image>
+          <!-- <a-image position=".5 .3 .11" height=".5" width=".7" src="img.png"></a-image> -->
 
 
           <a-entity position="-.9 .55 .1"
@@ -168,5 +219,7 @@
       <!-- <a-entity id="env" envirosnment="preset: yavapai;ground:hills; lightPosition:0 1 1;playArea:1.5"></a-entity> -->
     </a-scene>
   </body>
-  <script></script>
+  <script>
+
+  </script>
 </html>
