@@ -59,3 +59,36 @@ AFRAME.registerComponent('changesetting', {
         })
     }
 });
+AFRAME.registerComponent('powerplant', {
+    init: function() {
+        var el = this.el;
+        el.addEventListener('click', function() {
+            console.log("NANI")
+            document.querySelector('#scene3').setAttribute('visible', 'false')
+            document.querySelector('#scene5').setAttribute('visible', 'true')
+            // document.querySelector('#env').setAttribute('environment', 'preset:forest')
+        })
+    }
+});
+AFRAME.registerComponent('coal', {
+    init: function() {
+        var el = this.el;
+        el.addEventListener('click', function() {
+            console.log("NANI")
+            document.querySelector('#inForest').setAttribute('visible', 'false')
+            document.querySelector('#coal').setAttribute('visible', 'true')
+            // document.querySelector('#env').setAttribute('environment', 'preset:forest')
+        })
+    }
+});
+AFRAME.registerComponent('wind', {
+    init: function() {
+        var el = this.el;
+        el.addEventListener('click', function() {
+            console.log("NANI")
+            document.querySelector('#inForest').setAttribute('visible', 'false')
+            document.querySelector('#wind').setAttribute('visible', 'true')
+            // document.querySelector('#env').setAttribute('environment', 'preset:forest')
+        })
+    }
+});

@@ -9,6 +9,25 @@
     <script src="/app.js"></script>
   </head>
   <body>
+<!--      Windmill 
+          <a-cylinder position="0 0 -20" radius=".7" height="20">
+            <a-cylinder position = "0 11 1" height="4" radius="" rotation="90 0 0" color="grey">
+              <a-entity rotation="0 0 0"  animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+                <a-box position="0 1.4 0" width="15" color="white"></a-box>
+              </a-entity>
+              <a-entity rotation="0 0 0"  animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+                <a-box rotation ="0 90 0" position="0 1.4 0" width="15" color="white"></a-box>
+              </a-entity>
+            </a-cylinder>
+          </a-cylinder>
+     -->
+    
+  <!--           Nuclear Power Plant
+        <a-cone height="10" rotation="180 0 0" radius-top="8" radius-bottom="5" position="0 5 -20">
+          <a-cylinder radius="6" height="3" position="0 -2 0"></a-cylinder>
+        </a-cone>          
+        <a-cone height="10" rotation="0 0 0" radius-top="6.5" radius-bottom="5.5" position="0 8 -20"></a-cone>
+         -->
     <a-scene>
       <a-camera>
         <a-cursor> </a-cursor>
@@ -16,6 +35,7 @@
       <a-entity id="inForest" visible="true">
 <!--         <a-box id="changeForest" changesetting></a-box> -->
         <a-entity id="scene1" visible="false">
+
           <a-entity
             id="title"
             position="2.1 2.4 -2"
@@ -108,7 +128,7 @@
           </a-box>
         </a-entity>
 
-        <a-entity id="scene3" visible="true">
+        <a-entity id="scene3" visible="false">
           <a-box
             position="0 1.4 -2"
             width="2"
@@ -154,9 +174,11 @@
               height=".2"
               depth=".2"
               color="grey"
+              powerplant
             >
               <a-entity
                 position=".58 0 .1"
+                powerplant
                 text="width:1.5;value:Power Plant"
               ></a-entity>
             </a-box>
@@ -189,6 +211,7 @@
             </a-box>
           </a-box>
         </a-entity>
+        
         <a-entity id="scene4" visible="false">
           <a-entity
             position="-2 2 -5"
@@ -335,15 +358,152 @@
             </a-box>
           </a-box>
         </a-entity>
+        
+        <a-entity id="scene5" visible="true">          
+          <a-entity
+            position="-2 2 -5"
+            text="anchor: left; width: 5; color: black; value: What type of energy will you produce?"
+          ></a-entity>
+          <a-entity
+            position="-2 1 -5"
+            text="anchor: left; width: 10; color: black; value: Problem Arises"
+          ></a-entity>
+          
+          <a-entity
+            position="-6 2 0"
+            rotation="0 90 0"
+            text="anchor: left; width: 10; color: black; value: Solar Panels"
+          >
+          </a-entity>
+          <a-entity
+            position="-6 1.5 0"
+            rotation="0 90 0"
+            text="anchor: left; width: 3.3; color: black; value: Clean fuel source that is not very effective, but has very low maintenance needs and cheap starting cost. Requires lots of space, and is dependent on the environment. "
+          >
+          </a-entity>
+
+          <a-cylinder position="-5 0 -1.2" height="2" color="green" radius=".2">
+            <a-box
+              position="0 .95 0"
+              rotation="0 0 -20"
+              color="green"
+              height=".2"
+              depth=".2"
+              width=".2"
+            >
+              <a-sphere position="0 .07 0" color="red" radius=".1" >
+              </a-sphere>
+            </a-box>
+          </a-cylinder>
+
+          <a-entity
+            position="-6 2 4"
+            rotation="0 90 0"
+            text="anchor: left; width: 10; color: black; value: Coal Plants"
+          >
+          </a-entity>
+          <a-entity
+            position="-6 1.5 4"
+            rotation="0 90 0"
+            text="anchor: left; width: 3.3; color: black; value: Cheap energy source that does not depend on weather, creates lots of jobs, but has devastating impact on the environment. Very profitable"
+          >
+          </a-entity>
+          <a-cylinder position="-5 0 2.8" height="2" color="green" radius=".2">
+            <a-box
+              position="0 .95 0"
+              rotation="0 0 -20"
+              color="green"
+              height=".2"
+              depth=".2"
+              width=".2"
+            >
+              <a-sphere position="0 .07 0" color="red" radius=".1" coal></a-sphere>
+            </a-box>
+          </a-cylinder>
+
+          <a-entity
+            position="-6 2 8"
+            rotation="0 90 0"
+            text="anchor: left; width: 10; color: black; value: Wind Turbines"
+          >
+          </a-entity>
+          <a-entity
+            position="-6 1.5 8"
+            rotation="0 90 0"
+            text="anchor: left; width: 3.3;  color: black; value: Clean fuel source that efficiently convert wind energy to usable energy, that requires some maintenance and has a negative impact on natural habitats and endanger birds"
+          >
+          </a-entity>
+          <a-cylinder position="-5 0 6.8" height="2" color="green" radius=".2">
+            <a-box
+              position="0 .95 0"
+              rotation="0 0 -20"
+              color="green"
+              height=".2"
+              depth=".2"
+              width=".2"
+            >
+              <a-sphere position="0 .07 0" color="red" radius=".1" wind></a-sphere>
+            </a-box>
+          </a-cylinder>
+        </a-entity>
+        
         <a-entity
           id="env"
-          environment="preset: forest;dressing:trees;dressingAmount:1200;playArea:4;lightPosition:0 1 1;"
+          environment="preset: forest;dressing:trees;dressingAmount:1000;playArea:4;lightPosition:0 1 1;"
         ></a-entity>
+        
       </a-entity>
-      <a-entity id="inLake" visible="false">
-        <a-entity environment="preset: yavapai;ground:hills; lightPosition:0 1 1;playArea:1.5"></a-entity>
+      
+      <a-entity id="wind" visible="false">
+          <a-cylinder position="0 0 -20" radius=".7" height="20">
+            <a-cylinder position = "0 11 1" height="4" radius="" rotation="90 0 0" color="grey">
+              <a-entity rotation="0 0 0"  animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+                <a-box position="0 1.4 0" width="15" color="white"></a-box>
+              </a-entity>
+              <a-entity rotation="0 0 0"  animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+                <a-box rotation ="0 90 0" position="0 1.4 0" width="15" color="white"></a-box>
+              </a-entity>
+            </a-cylinder>
+          </a-cylinder>
+          <a-cylinder position="20 0 -20" radius=".7" height="20">
+            <a-cylinder position = "0 11 1" height="4" radius="" rotation="90 0 0" color="grey">
+              <a-entity rotation="0 0 0"  animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+                <a-box position="0 1.4 0" width="15" color="white"></a-box>
+              </a-entity>
+              <a-entity rotation="0 0 0"  animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+                <a-box rotation ="0 90 0" position="0 1.4 0" width="15" color="white"></a-box>
+              </a-entity>
+            </a-cylinder>
+          </a-cylinder>
+        
+          <a-cylinder position="-20 0 -20" radius=".7" height="20">
+            <a-cylinder position = "0 11 1" height="4" radius="" rotation="90 0 0" color="grey">
+              <a-entity rotation="0 0 0"  animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+                <a-box position="0 1.4 0" width="15" color="white"></a-box>
+              </a-entity>
+              <a-entity rotation="0 0 0"  animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+                <a-box rotation ="0 90 0" position="0 1.4 0" width="15" color="white"></a-box>
+              </a-entity>
+            </a-cylinder>
+          </a-cylinder>
+        <a-entity environment="preset: forest;dressing:trees;dressingAmount:800;playArea:4;lightPosition:0 1 1;"></a-entity>
       </a-entity>
+      
+      
+      <a-entity id="solar" visible="false">
+        <a-entity environment="preset: forest;dressing:trees;dressingAmount:600;playArea:4;lightPosition:0 1 1;"></a-entity>
+      </a-entity>
+      
+      <a-entity id="coal" visible="false">
+        <a-cone height="10" rotation="180 0 0" radius-top="8" radius-bottom="5" position="0 5 -20">
+          <a-cylinder radius="6" height="3" position="0 -2 0"></a-cylinder>
+        </a-cone>          
+        <a-cone height="10" rotation="0 0 0" radius-top="6.5" radius-bottom="5.5" position="0 8 -20"></a-cone>
+        <a-entity environment="preset: forest;dressing:trees;dressingAmount:10;playArea:4;lightPosition:0 1 1;"></a-entity>
+      </a-entity>
+      
       </a-scene>
+    
   </body>
   <script></script>
 </html>
