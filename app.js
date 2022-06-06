@@ -1,32 +1,4 @@
 
-    //   document.querySelector('#refresh-button').addEventListener('click', function() {
-    //     console.log("hello")
-    // });
-    
-    // document.querySelector('#maybe').addEventListener('click', function() {
-    //     console.log('starting')
-    //   })
-    // function maybe() {
-    //     console.log("Maybe")
-    // }
-    // AFRAME.registerComponent("clock1", {
-    //     schema: {},
-      
-    //     init: function () {
-    //       //Create a new element, set\
-    //       document.querySelector('#exit').setAttribute('text', "maybe")
-      
-    //       //TODO: Use helper functions in timezone.js to display the current time and support converting time zones
-    //       //For implementing interactivity, you may find .addEventListener() useful
-    //       //https://aframe.io/docs/1.2.0/introduction/interactions-and-controllers.html#events
-    //     },
-      
-    //     tick: function () {
-    //       this.addEventListener('click', function(evt) {
-    //         console.log("NANI");
-    //       })
-    //     },
-    //   });
 function maybe() {
     console.log('nani')
 }
@@ -73,6 +45,17 @@ AFRAME.registerComponent('scene2continue', {
             document.querySelector('#scene3').setAttribute('visible', 'false')
             document.querySelector('#scene4').setAttribute('visible', 'true')
             document.querySelector('#env').setAttribute('environment', 'preset:forest')
+        })
+    }
+});
+AFRAME.registerComponent('changesetting', {
+    init: function() {
+        var el = this.el;
+        el.addEventListener('click', function() {
+            console.log("NANI")
+            document.querySelector('#inForest').setAttribute('visible', 'false')
+            document.querySelector('#inLake').setAttribute('visible', 'true')
+            // document.querySelector('#env').setAttribute('environment', 'preset:forest')
         })
     }
 });

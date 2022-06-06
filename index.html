@@ -1,172 +1,349 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Hello, World! - A-Frame</title>
-    <meta name="description" content="Hello, World! - A-Frame">
+    <meta name="description" content="Hello, World! - A-Frame" />
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
     <script src="/app.js"></script>
   </head>
   <body>
-    <a-scene>    
+    <a-scene>
       <a-camera>
         <a-cursor> </a-cursor>
       </a-camera>
-
-      <a-entity id="scene1" visible="true">
-        <a-entity id="title" position="2.1 2.4 -2"
-          text=" width: 5; color: white; value: CC Sim">
+      <a-entity id="inForest" visible="true">
+<!--         <a-box id="changeForest" changesetting></a-box> -->
+        <a-entity id="scene1" visible="false">
+          <a-entity
+            id="title"
+            position="2.1 2.4 -2"
+            text=" width: 5; color: white; value: CC Sim"
+          >
+          </a-entity>
+          <a-box
+            id="start"
+            start
+            position="0 2 -2"
+            height=".2"
+            depth=".2"
+            color="blue"
+          >
+            <a-entity
+              position="-.1 0 .1"
+              text="anchor: left; width: 1.5; color: white; value: Start"
+            >
+            </a-entity>
+          </a-box>
+          <a-box
+            id="load"
+            load
+            position="0 1.7 -2"
+            height=".2"
+            depth=".2"
+            color="green"
+          >
+            <a-entity
+              position="-.15 0 .1"
+              text="anchor: left; width: 1.5; color: white; value: Load Save"
+            >
+            </a-entity>
+          </a-box>
+          <a-box
+            id="exit"
+            exit
+            position="0 1.4 -2"
+            height=".2"
+            depth=".2"
+            color="red"
+          >
+            <a-entity
+              position="-.1 0 .1"
+              text="anchor: left; width: 1.5; color: white; value: Exit"
+            >
+            </a-entity>
+          </a-box>
         </a-entity>
-        <a-box id="start" start position="0 2 -2" height=".2" depth=".2" color="blue">
-          <a-entity position="-.1 0 .1"
-            text="anchor: left; width: 1.5; color: white; value: Start">
-          </a-entity>
-        </a-box>
-        <a-box id="load" load position="0 1.7 -2" height=".2" depth=".2"  color="green">
-          <a-entity position="-.15 0 .1"
-            text="anchor: left; width: 1.5; color: white; value: Load Save">
-          </a-entity>
-        </a-box>
-        <a-box id="exit" exit position="0 1.4 -2" height=".2" depth=".2"  color="red">
-          <a-entity position="-.1 0 .1"
-            text="anchor: left; width: 1.5; color: white; value: Exit">
-          </a-entity>
-        </a-box> 
-      </a-entity>   
 
-
-      <a-entity id="scene2" visible="false" >
-        <a-box position="0 1.4 -2" width="2" height="1.3" depth=".2"  color="brown">
-          <a-entity position="-.9 .55 .1"
-            text="anchor: left; width: 2; color: white; value: Tutorial">
-          </a-entity>
-          <a-entity position="-.8 .25 .1" 
-          text="anchor: left;width:1.5; wrapCount: 35; color: white; value: Goal: Try to balance preserving
-           the environment with keeping your company alive.  Every action you take visbly affects the environment.">
-          </a-entity>
-          <a-entity position="-.8 -.1 .1"
-            text="anchor: left;width:1.5; wrapCount: 35; color: white; value:Controls: Aim the VR controller to
-            select an option with either trigger button, and watch how your choices affect the simulation  ">
-          </a-entity>
-          <a-box scene1continue position="0 -.4 .03" color="white" width=".5" height=".1" depth=".2">
-            <a-entity position="-.19 0 .1"
-              text="anchor: left; width: 2; color: black; value: Continue">
+        <a-entity id="scene2" visible="false">
+          <a-box
+            position="0 1.4 -2"
+            width="2"
+            height="1.3"
+            depth=".2"
+            color="brown"
+          >
+            <a-entity
+              position="-.9 .55 .1"
+              text="anchor: left; width: 2; color: white; value: Tutorial"
+            >
             </a-entity>
-          </a-box>
-        </a-box> 
-      </a-entity>
-
-      <a-entity id="scene3" visible="false">
-        <a-box position="0 1.4 -2" width="2" height="1.3" depth=".2"  color="brown">
-          <a-image position=".5 .3 .11" height=".5" width=".7" src="img.png"></a-image>
-
-
-          <a-entity position="-.9 .55 .1"
-            text="anchor: left; width: 2; color: white; value: Choose A Scenario">
-          </a-entity>
-          <a-box position="-.6 .3 .001" width=".7" height=".2" depth=".2"  color="purple">
-            <a-entity position=".5 0 .1" text="width:1.5;value:Fishing Company"></a-entity>
-          </a-box>
-          
-          <a-box position="-.6 0 .001" width=".7" height=".2" depth=".2"  color="grey">
-            <a-entity position=".61 0 .1" text="width:1.5;value:Factory"></a-entity>
-          </a-box>      
-          <a-box position="-.6 -.3 .001" width=".7" height=".2" depth=".2"  color="grey">
-            <a-entity position=".58 0 .1" text="width:1.5;value:Power Plant"></a-entity>
-          </a-box>       
-          <a-box position="-.6 -.5 .001" color="white" width=".2" height=".1" depth=".2">
+            <a-entity
+              position="-.8 .25 .1"
+              text="anchor: left;width:1.5; wrapCount: 35; color: white; value: Goal: Try to balance preserving
+           the environment with keeping your company alive.  Every action you take visbly affects the environment."
+            >
+            </a-entity>
+            <a-entity
+              position="-.8 -.1 .1"
+              text="anchor: left;width:1.5; wrapCount: 35; color: white; value:Controls: Aim the VR controller to
+            select an option with either trigger button, and watch how your choices affect the simulation  "
+            >
+            </a-entity>
+            <a-box
+              scene1continue
+              position="0 -.4 .05"
+              color="white"
+              width=".5"
+              height=".1"
+              depth=".2"
+            >
+              <a-entity
+                position="-.19 0 .1"
+                text="anchor: left; width: 2; color: black; value: Continue"
+              >
+              </a-entity>
             </a-box>
-          <a-entity position="0 -.15 .1" 
-          text="anchor: left;width:1; wrapCount: 35; color: white; value: You are the manager of a commercial fishing company. You're goal is to run your business without ruining the environment with your choices. Will you comply or do whats best for your company?">
-          </a-entity>
-          <a-box scene2continue position=".6 -.4 .03" color="white" width=".5" height=".1" depth=".2">
-            <a-entity position="-.19 0 .1"
-              text="anchor: left; width: 2; color: black; value: Continue">
+          </a-box>
+        </a-entity>
+
+        <a-entity id="scene3" visible="true">
+          <a-box
+            position="0 1.4 -2"
+            width="2"
+            height="1.3"
+            depth=".2"
+            color="brown"
+          >
+            <!-- <a-image position=".5 .3 .11" height=".5" width=".7" src="img.png"></a-image> -->
+
+            <a-entity
+              position="-.9 .55 .1"
+              text="anchor: left; width: 2; color: white; value: Choose A Scenario"
+            >
             </a-entity>
-          </a-box>       
-        </a-box> 
-      </a-entity>
-      <a-entity id="scene4" visible="false">
-          <a-entity position="-2 2 -5"
-            text="anchor: left; width: 10; color: black; value: Problem Arises">
-          </a-entity>          
-          <a-entity position="-2 1 -5"
-            text="anchor: left; width: 5; color: black; value: You come across a school of highly sought out fish that you can sell for a large profit. You face a dilemma on what method you should use to catch the fish. Should you use the trawling method, which is more harmful to the population, or should you use the pole and line method?">
+            <a-box
+              position="-.6 .3 .001"
+              width=".7"
+              height=".2"
+              depth=".2"
+              color="purple"
+            >
+              <a-entity
+                position=".5 0 .1"
+                text="width:1.5;value:Fishing Company"
+              ></a-entity>
+            </a-box>
+
+            <a-box
+              position="-.6 0 .001"
+              width=".7"
+              height=".2"
+              depth=".2"
+              color="grey"
+            >
+              <a-entity
+                position=".61 0 .1"
+                text="width:1.5;value:Factory"
+              ></a-entity>
+            </a-box>
+            <a-box
+              position="-.6 -.3 .001"
+              width=".7"
+              height=".2"
+              depth=".2"
+              color="grey"
+            >
+              <a-entity
+                position=".58 0 .1"
+                text="width:1.5;value:Power Plant"
+              ></a-entity>
+            </a-box>
+            <a-box
+              position="-.6 -.5 .001"
+              color="white"
+              width=".2"
+              height=".1"
+              depth=".2"
+            >
+            </a-box>
+            <a-entity
+              position="0 -.15 .1"
+              text="anchor: left;width:1; wrapCount: 35; color: white; value: You are the manager of a commercial fishing company. You're goal is to run your business without ruining the environment with your choices. Will you comply or do whats best for your company?"
+            >
+            </a-entity>
+            <a-box
+              scene2continue
+              position=".6 -.4 .05"
+              color="white"
+              width=".5"
+              height=".1"
+              depth=".2"
+            >
+              <a-entity
+                position="-.19 0 .1"
+                text="anchor: left; width: 2; color: black; value: Continue"
+              >
+              </a-entity>
+            </a-box>
+          </a-box>
+        </a-entity>
+        <a-entity id="scene4" visible="false">
+          <a-entity
+            position="-2 2 -5"
+            text="anchor: left; width: 10; color: black; value: Problem Arises"
+          >
           </a-entity>
-              
-          <a-entity position="-6 2 0" rotation="0 90 0"
-          text="anchor: left; width: 10; color: black; value: Purse Seine">
-        </a-entity> 
-          <a-entity position="-6 1.5 0" rotation="0 90 0"
-            text="anchor: left; width: 3.3; color: black; value: A purse seine is a large wall of netting deployed around an entire area or school of fish.">
+          <a-entity
+            position="-2 1 -5"
+            text="anchor: left; width: 5; color: black; value: You come across a school of highly sought out fish that you can sell for a large profit. You face a dilemma on what method you should use to catch the fish. Should you use the trawling method, which is more harmful to the population, or should you use the pole and line method?"
+          >
           </a-entity>
-          
-        <a-cylinder position="-5 0 -1.2" height="2" color="green" radius=".2">
-          <a-box position="0 .95 0" rotation="0 0 -20" color="green" height=".2" depth=".2" width=".2">
-            <a-sphere position="0 .05 0" color="red" radius=".1">
-              <!-- <a-entity position="0 .1 .07" rotation="-90 90 0"
+
+          <a-entity
+            position="-6 2 0"
+            rotation="0 90 0"
+            text="anchor: left; width: 10; color: black; value: Purse Seine"
+          >
+          </a-entity>
+          <a-entity
+            position="-6 1.5 0"
+            rotation="0 90 0"
+            text="anchor: left; width: 3.3; color: black; value: A purse seine is a large wall of netting deployed around an entire area or school of fish."
+          >
+          </a-entity>
+
+          <a-cylinder position="-5 0 -1.2" height="2" color="green" radius=".2">
+            <a-box
+              position="0 .95 0"
+              rotation="0 0 -20"
+              color="green"
+              height=".2"
+              depth=".2"
+              width=".2"
+            >
+              <a-sphere position="0 .05 0" color="red" radius=".1">
+                <!-- <a-entity position="0 .1 .07" rotation="-90 90 0"
               text="anchor: left; width: 1; color: black; value: Press">
             </a-entity> -->
-            </a-sphere>
-          </a-box>
-        </a-cylinder>
+              </a-sphere>
+            </a-box>
+          </a-cylinder>
 
-          <a-entity position="-6 2 4" rotation="0 90 0"
-          text="anchor: left; width: 10; color: black; value: Trawling">
-        </a-entity> 
-          <a-entity position="-6 1.5 4" rotation="0 90 0"
-            text="anchor: left; width: 3.3; color: black; value: Trawling is a method of fishing that involves actively dragging or pulling a fishing nets along the bottom of the sea.">
+          <a-entity
+            position="-6 2 4"
+            rotation="0 90 0"
+            text="anchor: left; width: 10; color: black; value: Trawling"
+          >
+          </a-entity>
+          <a-entity
+            position="-6 1.5 4"
+            rotation="0 90 0"
+            text="anchor: left; width: 3.3; color: black; value: Trawling is a method of fishing that involves actively dragging or pulling a fishing nets along the bottom of the sea."
+          >
           </a-entity>
           <a-cylinder position="-5 0 2.8" height="2" color="green" radius=".2">
-            <a-box position="0 .95 0" rotation="0 0 -20" color="green" height=".2" depth=".2" width=".2">
+            <a-box
+              position="0 .95 0"
+              rotation="0 0 -20"
+              color="green"
+              height=".2"
+              depth=".2"
+              width=".2"
+            >
               <a-sphere position="0 .05 0" color="red" radius=".1"></a-sphere>
             </a-box>
           </a-cylinder>
 
-          <a-entity position="-6 2 8" rotation="0 90 0"
-          text="anchor: left; width: 10; color: black; value: Pole and Line">
-        </a-entity> 
-          <a-entity position="-6 1.5 8" rotation="0 90 0"
-            text="anchor: left; width: 3.3;  color: black; value: Pole and line fishing uses hand held or mechanically operated poles with baited hooks.">
+          <a-entity
+            position="-6 2 8"
+            rotation="0 90 0"
+            text="anchor: left; width: 10; color: black; value: Pole and Line"
+          >
+          </a-entity>
+          <a-entity
+            position="-6 1.5 8"
+            rotation="0 90 0"
+            text="anchor: left; width: 3.3;  color: black; value: Pole and line fishing uses hand held or mechanically operated poles with baited hooks."
+          >
           </a-entity>
           <a-cylinder position="-5 0 6.8" height="2" color="green" radius=".2">
-            <a-box position="0 .95 0" rotation="0 0 -20" color="green" height=".2" depth=".2" width=".2">
+            <a-box
+              position="0 .95 0"
+              rotation="0 0 -20"
+              color="green"
+              height=".2"
+              depth=".2"
+              width=".2"
+            >
               <a-sphere position="0 .05 0" color="red" radius=".1"></a-sphere>
             </a-box>
           </a-cylinder>
 
-        <a-box width="15" height="20" depth="1" position="-10 0 2" rotation="0 90 0">     
-          <a-entity position="-7 9 .59 "
-            text="anchor: left; width: 10;  color: black; value:Reputation">
-          </a-entity>
+          <a-box
+            width="15"
+            height="20"
+            depth="1"
+            position="-10 0 2"
+            rotation="0 90 0"
+          >
+            <a-entity
+              position="-7 9 .59 "
+              text="anchor: left; width: 10;  color: black; value:Reputation"
+            >
+            </a-entity>
 
-          <a-entity position="-6 8 .59 "
-            text="anchor: left; width: 10;  color: black; value:Environment">
-          </a-entity> 
-          <a-box position="0 7.3 .05" width="10" color="black">
-            <a-box position="-.5 0 .05" width="9" color="green" height=".9"></a-box>
+            <a-entity
+              position="-6 8 .59 "
+              text="anchor: left; width: 10;  color: black; value:Environment"
+            >
+            </a-entity>
+            <a-box position="0 7.3 .05" width="10" color="black">
+              <a-box
+                position="-.5 0 .05"
+                width="9"
+                color="green"
+                height=".9"
+              ></a-box>
+            </a-box>
+            <a-entity
+              position="-6 6 .59 "
+              text="anchor: left; width: 10;  color: black; value:Worker Happiness"
+            >
+            </a-entity>
+            <a-box position="0 5.3 .05" width="10" color="black">
+              <a-box
+                position="-.5 0 .05"
+                width="9"
+                color="green"
+                height=".9"
+              ></a-box>
+            </a-box>
+            <a-entity
+              position="-6 4 .59 "
+              text="anchor: left; width: 10;  color: black; value:Profit"
+            >
+            </a-entity>
+            <a-box position="0 3.3 .05" width="10" color="black">
+              <a-box
+                position="-.5 0 .05"
+                width="9"
+                color="green"
+                height=".9"
+              ></a-box>
+            </a-box>
           </a-box>
-          <a-entity position="-6 6 .59 "
-          text="anchor: left; width: 10;  color: black; value:Worker Happiness">
-          </a-entity> 
-          <a-box position="0 5.3 .05" width="10" color="black">
-            <a-box position="-.5 0 .05" width="9" color="green" height=".9"></a-box>
-          </a-box>          
-          <a-entity position="-6 4 .59 "
-          text="anchor: left; width: 10;  color: black; value:Profit">
-          </a-entity> 
-          <a-box position="0 3.3 .05" width="10" color="black">
-            <a-box position="-.5 0 .05" width="9" color="green" height=".9"></a-box>
-          </a-box>
-
-
-          
-        </a-box>
+        </a-entity>
+        <a-entity
+          id="env"
+          environment="preset: forest;dressing:trees;dressingAmount:1200;playArea:4;lightPosition:0 1 1;"
+        ></a-entity>
       </a-entity>
-      <a-entity id="env" environment="preset: forest;dressing:trees;dressingAmount:1200;playArea:4;lightPosition:0 1 1;"></a-entity> 
-      <!-- <a-entity id="env" envirosnment="preset: yavapai;ground:hills; lightPosition:0 1 1;playArea:1.5"></a-entity> -->
-    </a-scene>
+      <a-entity id="inLake" visible="false">
+        <a-entity environment="preset: yavapai;ground:hills; lightPosition:0 1 1;playArea:1.5"></a-entity>
+      </a-entity>
+      </a-scene>
   </body>
   <script></script>
 </html>
